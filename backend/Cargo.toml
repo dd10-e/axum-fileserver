@@ -1,0 +1,35 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = { version = "*", features = ["multipart", "headers"] }
+tokio = { version = "1.0", features = ["full"] }
+tokio-util = "0.6.9"
+tower-http = { version = "*", features = ["trace", "cors", "fs"] }
+cap-std = "*"
+tracing = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.57"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+anyhow = "1.0"
+dotenv = "0.15"
+time = { version = "0.3.5", features = ['serde-human-readable', "macros"]}
+humansize = "1.1.1"
+new_mime_guess = "4.0.0"
+tower-service = "^0.3"
+uuid = "0.8"
+camino = "1.0.7"
+jsonwebtoken = "7.2.0"
+lazy_static = "1.4.0"
+chrono = "0.4" # TODO: Remove
+oso = "0.26.0"
+oso-derive = "0.26.0"
+
+[dependencies.sea-orm]
+version = "^0.5.0"
+features = ["sqlx-postgres", "macros", "runtime-tokio-native-tls", "debug-print"]
+default-features = false
